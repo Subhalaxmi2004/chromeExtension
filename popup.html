@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title Picker</title>
+  <style>
+   body {
+      width: 200px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+button {
+  position: relative;
+  background-color: #1877F2;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 154px;
+  height: 49px;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: width 700ms ease-in-out;
+  display: inline-block;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+    #titleContainer{
+        margin-top: 10px;
+        font-size: 17px;
+        font-weight: bold;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Title Picker</h1>
+  <button id="pickTitleBtn">Pick Title</button>
+  <div id="titleContainer"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
